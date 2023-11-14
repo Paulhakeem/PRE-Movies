@@ -26,7 +26,7 @@ movies.value = list.results
       >
         trending
       </h1>
-      <RouterLink to="/home">
+      <RouterLink to="/">
         <button
         class="bg-[#032541] p-1 w-20 rounded-full text-[#88cca5] first-letter:uppercase"
       >

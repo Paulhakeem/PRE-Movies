@@ -31,7 +31,7 @@ onMounted(async () => {
       >
         trending
       </h1>
-      <RouterLink to="/home">
+      <RouterLink to="/">
         <button
         @click="active"
         :class="isActive ? 'bg-[#032541] text-[#88cca5]' : 'bg-white text-[#032541]'"
