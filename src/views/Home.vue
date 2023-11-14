@@ -1,7 +1,7 @@
 <script setup>
-import { ref, onMounted } from "vue";
-import { RouterLink } from "vue-router";
-import Header from "../components/Header.vue";
+import { ref, onMounted } from "vue"
+import Header from "../components/Header.vue"
+import Button from '../components/Button.vue'
 
 const movies = ref([]);
 
@@ -14,7 +14,7 @@ onMounted(async () => {
     movies.value = list.results;
     console.log(list);
   } catch (error) {
-    console.error("Error fetching data:", error);
+    alert("Error fetching data:", error);
   }
 });
 </script>
@@ -23,36 +23,9 @@ onMounted(async () => {
         <Header/>
     </div>
   <main>
-    <div class="trending flex gap-6 pl-20 mt-6 mb-4">
-      <h1
-        class="text-left text-xl font-semibold text-[#032541] first-letter:uppercase"
-      >
-        trending
-      </h1>
-      <RouterLink to="/">
-        <button
-        class="bg-[#032541] p-1 w-20 rounded-full text-[#88cca5] first-letter:uppercase"
-      >
-        all
-      </button>
-      </RouterLink>
-      <RouterLink to="/trends">
-        <button
-        class="bg-[#032541] p-1 w-20 rounded-full text-[#88cca5] first-letter:uppercase"
-      >
-        today
-      </button>
-      </RouterLink>
-      <RouterLink to="/week">
-        <button
-        class="border border-1 border-[#032541] p-1 w-20 rounded-full text-[#88cca5] first-letter:uppercase"
-      >
-        week
-      </button>
-      </RouterLink>
-      
-    </div>
-
+     <div>
+        <Button/>
+     </div>
     <div class="flex flex-wrap justify-center">
       <div v-for="movie in movies" :key="movie.tmdbID" class="list">
         <div class="max-w-md flex-1 basis-12 pt-10 pb-10 pl-4 pr-4 w-64">
