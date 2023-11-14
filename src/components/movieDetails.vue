@@ -1,7 +1,13 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { RouterLink } from "vue-router";
+
 const movies = ref([]);
+const isActive = ref(false)
+
+const active = () => {
+  isActive.value = !isActive.value
+}
 
 onMounted(async () => {
   try {
@@ -27,14 +33,18 @@ onMounted(async () => {
       </h1>
       <RouterLink to="/home">
         <button
-        class="bg-[#032541] p-1 w-20 rounded-full text-[#88cca5] first-letter:uppercase"
+        @click="active"
+        :class="isActive ? 'bg-[#032541] text-[#88cca5]' : 'bg-white text-[#032541]'"
+        class="border border-1 border-[#032541] p-1 w-20 rounded-full first-letter:uppercase"
       >
         all
       </button>
      </RouterLink>
      <RouterLink to="/trends">
-        <button
-        class="bg-[#032541] p-1 w-20 rounded-full text-[#88cca5] first-letter:uppercase"
+        <button 
+        @click="active"
+        :class="isActive ? 'bg-[#032541] text-[#88cca5]' : 'bg-white text-[#032541]'"
+        class="border border-1 border-[#032541] p-1 w-20 rounded-full first-letter:uppercase"
       >
         today
       </button>
@@ -42,6 +52,8 @@ onMounted(async () => {
 
       <RouterLink to="/week">
         <button
+        @click="active"
+        :class="isActive ? 'bg-[#032541] text-[#88cca5]' : 'bg-white text-[#032541]'"
         class="border border-1 border-[#032541] p-1 w-20 rounded-full text-[#88cca5] first-letter:uppercase"
       >
         week
