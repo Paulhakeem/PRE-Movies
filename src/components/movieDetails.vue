@@ -14,7 +14,7 @@ onMounted(async () => {
     movies.value = list.results;
     console.log(list);
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Error fetching data:", error.message);
   }
 });
 </script>
