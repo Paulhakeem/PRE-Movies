@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@media (max-width: 768px) {
+    .trending {
+    text-align: center;
+    justify-content: center;
+    padding-left: 1px;
+    padding-right: 1px;
+    }
+    .list {
+        width: 40%;
+        display: flex;
+    }
+}
