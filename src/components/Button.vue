@@ -17,7 +17,7 @@ const activeThree = () => {
 }
 </script>
 <template>
-     <div class="trending flex gap-6 pl-20 mt-6 mb-4">
+     <div class="trending flex gap-6 pl-20 pt-10">
       <h1
         class="text-left text-xl font-semibold text-[#032541] first-letter:uppercase"
       >

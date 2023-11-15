@@ -37,11 +37,17 @@ onMounted(async () => {
     <div class="flex flex-wrap justify-center">
       <div v-for="tv in shows" :key="tv.tmdbID" class="list">
         <div class="max-w-md flex-1 basis-12 pt-10 pb-10 pl-4 pr-4 w-64">
+          <div class="absolute w-12 h-12 justify-center items-center rounded-full bg-[#032541] mx-2 my-2">
+            <div class="ml-1 mt-1 border-2 border-[#0db5df]  w-10 h-10 rounded-full">
+              <p class="text-md pt-1.5 text-white text-center">{{ tv.vote_average }}</p>
+            </div>
+          </div>
           <img
             :src="`https://image.tmdb.org/t/p/original/${tv.poster_path}`"
             alt="movie poster"
             class="mb-2"
           />
+    
 
           <button
             class="bg-[#032541] text-[#88cca5] text-center rounded-full w-14 pb-1"

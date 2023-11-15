@@ -95,7 +95,7 @@ import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
      
       <font-awesome-icon
         :icon="['fas', 'magnifying-glass']"
-        class="fa-2x text-[#fffefa]"
+        class="text-2xl text-[#fffefa] pt-2"
       />
     </div>
   </div>
