@@ -15,4 +15,10 @@
         width: 40%;
         display: flex;
     }
+    .wallpaper {
+        height: 70vh;
+    }
+    .form {
+        padding-top: 2em;
+    }
 }
