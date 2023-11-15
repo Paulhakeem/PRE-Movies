@@ -1,20 +1,22 @@
 <script setup>
- import { ref, onMounted } from 'vue'
-import Header from '../components/Header.vue';
-import Button from '../components/Button.vue';
+import { ref, onMounted } from "vue"
+import Header from "../components/Header.vue"
 import Wallpaper from "../components/Wallpaper.vue"
 
- const movies = ref([])
+const movies = ref([]);
 
- onMounted(async() => {
- try {
-const fetchMovies = await fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=6b8d838296e5a23e5137a70749753a2d')
-const list = await fetchMovies.json()
-movies.value = list.results
- }catch (error) {
-    console.error('Error fetching data:', error)
- }
- })
+onMounted(async () => {
+  try {
+    const fetchMovies = await fetch(
+      "https://api.themoviedb.org/3/movie/popular?api_key=6b8d838296e5a23e5137a70749753a2d"
+    );
+    const list = await fetchMovies.json();
+    movies.value = list.results;
+    console.log(list);
+  } catch (error) {
+    alert("Error fetching data:", error);
+  }
+});
 </script>
 <template>
     <div>
@@ -23,8 +25,15 @@ movies.value = list.results
     <div>
         <Wallpaper/>
     </div>
- <main>
-    <Button/>
+  <main>
+     <div class="mt-4 ml-20 flex gap-6">
+       <h3 class="text-gray-800 font-semibold text-2xl">What's Popular</h3>
+       <button
+        class="bg-[#032541] w-20 rounded-full first-letter:uppercase text-[#08b4e2] pb-1 text-md"
+      >
+       Movies
+      </button>
+     </div>
     <div class="flex flex-wrap justify-center">
       <div v-for="movie in movies" :key="movie.tmdbID" class="list">
         <div class="max-w-md flex-1 basis-12 pt-10 pb-10 pl-4 pr-4 w-64">

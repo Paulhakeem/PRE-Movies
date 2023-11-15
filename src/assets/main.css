@@ -7,8 +7,9 @@
     .trending {
     text-align: center;
     justify-content: center;
-    padding-left: 1px;
-    padding-right: 1px;
+     align-items: center;
+     padding-right: 8em;
+     padding-right: 8em;
     }
     .list {
         width: 40%;

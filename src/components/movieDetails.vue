@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from "vue"
 import Button from "./Button.vue";
-
+import Wallpaper from "../components/Wallpaper.vue"
 const movies = ref([]);
 
 
@@ -22,6 +22,7 @@ onMounted(async () => {
 <template>
   <main>
      <div>
+      <Wallpaper/>
       <Button/>
      </div>
     <div class="movie flex flex-wrap justify-center">
