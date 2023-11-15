@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'wallpaper': "url('../assets/galaxy.jpg')",
+      }
+
+    },
   },
   plugins: [],
 }
