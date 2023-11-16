@@ -3,6 +3,7 @@ import { ref, onMounted } from "vue"
 import Header from "../components/Header.vue"
 import Button from '../components/Button.vue'
 import Wallpaper from "../components/Wallpaper.vue";
+import Footer from "../components/Footer.vue"
 
 const movies = ref([]);
 
@@ -53,4 +54,7 @@ onMounted(async () => {
       </div>
     </div>
   </main>
+  <div>
+    <Footer/>
+  </div>
 </template>

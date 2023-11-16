@@ -90,7 +90,7 @@ import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
       </transition>
     </Menu>
     <RouterLink to="/" class="cursor-pointer mt-4">
-      <img src="../assets/logo.svg" class="w-32" alt="" />
+      <img src="../assets/logo1.svg" class="w-32" alt="" />
     </RouterLink>
      
       <font-awesome-icon

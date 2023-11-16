@@ -3,6 +3,7 @@
 import Header from '../components/Header.vue';
 import Button from '../components/Button.vue';
 import Wallpaper from "../components/Wallpaper.vue"
+import Footer from "../components/Footer.vue"
 
  const movies = ref([])
 
@@ -49,4 +50,5 @@ movies.value = list.results
       </div>
     </div>
   </main>
+  <Footer/>
 </template>
