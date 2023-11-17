@@ -1,4 +1,5 @@
 <script setup>
+import Footer from '../components/Footer.vue'
 import { useMovieStore } from "../store/searchMovie";
 
 const useMovie = useMovieStore();
@@ -34,6 +35,10 @@ const useMovie = useMovieStore();
           Search
         </button>
       </form>
+
+      <div class="text-gray-200 bg-[#02b4e4] w-32 text-center mx-6 h-10">
+        <p class="pt-2 font-semibold ">Search Results</p>
+      </div>
       <div v-for="movie in useMovie.movies" :key="movie.tmdbID" class="list mx-6">
         <div class="flex w-full shadow-md rounded-md pr-4 mb-6">
           <img
@@ -53,26 +58,8 @@ const useMovie = useMovieStore();
             </div>
           </div>
         </div>
-        <!-- <div class="max-w-md flex-1 basis-12 pt-10 pb-10 pl-4 pr-4 w-64">
-          <img
-            :src="`https://image.tmdb.org/t/p/original/${movie.poster_path}`"
-            alt="movie poster"
-            class="mb-2"
-          />
-
-          <button
-            class="bg-[#032541] text-[#88cca5] text-center rounded-full w-14 pb-1"
-          >
-            {{ movie.media_type }}
-          </button>
-          <div>
-            <h3 class="font-semibold text-base">{{ movie.title }}</h3>
-          </div>
-          <div class="font-medium text-gray-400">
-            <h3>{{ movie.release_date }}</h3>
-          </div>
-        </div> -->
       </div>
     </div>
   </main>
+  <Footer/>
 </template>

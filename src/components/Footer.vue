@@ -1,6 +1,6 @@
 <script></script>
 <template>
-  <div class="bg-[#04233f] h-auto w-full pt-10 static bottom-0">
+  <div class="bg-[#04233f] h-auto w-full pt-10">
     <div class="flex flex-wrap flex-col-4 justify-evenly pb-8">
       <div>
         <img src="../assets/logo.svg" alt="" class="w-36" />
