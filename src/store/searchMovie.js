@@ -1,11 +1,12 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 
 export const useMovieStore = defineStore('movies', () => {
   const router = useRouter()
   const searchQuery = ref('')
   const movies = ref([])
+
 
 const searchMovies = async () => {
 

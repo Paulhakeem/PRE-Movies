@@ -11,11 +11,9 @@ const useMovie = useMovieStore();
       <RouterLink to="/" class="cursor-pointer mt-4">
         <img src="../assets/logo1.svg" class="w-32" alt="" />
       </RouterLink>
-
       <font-awesome-icon
-        :icon="['fas', 'magnifying-glass']"
-        class="text-2xl text-[#fffefa] pt-2"
-      />
+      class="text-2xl text-[#fffefa] pt-2"
+      :icon="['fas', 'bell']" />
     </div>
   </div>
 
@@ -39,12 +37,12 @@ const useMovie = useMovieStore();
       <div class="text-gray-200 bg-[#02b4e4] w-32 text-center mx-6 h-10">
         <p class="pt-2 font-semibold ">Search Results</p>
       </div>
-      <div v-for="movie in useMovie.movies" :key="movie.tmdbID" class="list mx-6">
+      <div v-for="movie in useMovie.movies" :key="movie.tmdbID" class="mx-6">
         <div class="flex w-full shadow-md rounded-md pr-4 mb-6">
           <img
             :src="`https://image.tmdb.org/t/p/original/${movie.poster_path}`"
             alt="movie poster"
-            class="mb-2 w-24"
+            class="mb-2 w-24 object-cover"
           />
           <div class="mx-4 pt-2">
             <div>
@@ -53,8 +51,8 @@ const useMovie = useMovieStore();
             <div class="font-medium text-gray-400 pt-1">
               <h3>{{ movie.release_date }}</h3>
             </div>
-            <div class="font-medium text-gray-700 pt-2">
-              <p>{{ movie.overview }}</p>
+            <div class="font-medium text-gray-700 pt-2 mb-2">
+              <p maxLength="10" class="">{{ movie.overview }}</p>
             </div>
           </div>
         </div>
