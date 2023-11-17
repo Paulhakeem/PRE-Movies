@@ -6,6 +6,7 @@ import Movie from '../views/Movie.vue'
 import TVShow from '../views/TVShow.vue'
 import Popular from '../views/Popular.vue'
 import TopRated from '../views/TopRated.vue'
+import searchMovies from '../views/searchMovies.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,11 @@ const router = createRouter({
       path: '/top-rated-movies',
       name: 'top-rated',
       component: TopRated
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: searchMovies
     }
   ]
 })

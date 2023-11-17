@@ -4,7 +4,7 @@ import Header from "../components/Header.vue"
 import Wallpaper from "../components/Wallpaper.vue"
 import Footer from "../components/Footer.vue"
 
-const shows = ref([]);
+const shows = ref([])
 
 onMounted(async () => {
   try {
@@ -13,6 +13,7 @@ onMounted(async () => {
     );
     const list = await fetchShows.json();
     shows.value = list.results;
+    tvRating.value = list.results.vote_average
     console.log(list);
   } catch (error) {
     alert("Error fetching data:", error);
