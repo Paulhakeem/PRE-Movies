@@ -20,8 +20,10 @@ const useMovie = useMovieStore();
 
   <main>
     <div class="movie space-y-10  mt-2">
-      <form class="form flex flex-row mx-6 gap-4">
+      <form @submit.prevent="useMovie.searchMovies"
+       class="form flex flex-row mx-6 gap-4">
         <input
+          v-model="useMovie.searchQuery"
           class="bg-gray-100 border text-md w-full p-3 outline-none text-lg text-gray-600 rounded-md"
           type="text"
           placeholder="Search for movies, tv shows and person..."
