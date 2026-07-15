@@ -2,23 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-gradient-to-b from-[#0f1419] to-[#1a1f2e] text-white;
+}
+
+.movie-card {
+  @apply bg-[#1a1f2e] rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer border border-[#2a3f5f];
+}
+
+.movie-card:hover img {
+  @apply brightness-110 scale-110;
+}
+
+.movie-card img {
+  @apply transition-all duration-300;
+}
+
+.gradient-btn {
+  @apply bg-gradient-to-r from-[#0db5df] to-[#08b4e2] hover:from-[#09d4ff] hover:to-[#0acbff] transition-all duration-300 shadow-lg hover:shadow-xl;
+}
+
+.btn-outline {
+  @apply border-2 border-[#0db5df] text-[#0db5df] hover:bg-[#0db5df] hover:text-white transition-all duration-300;
+}
+
+.glass-effect {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-lg;
+}
+
+.section-title {
+  @apply text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#0db5df] to-[#88cca5];
+}
 
 @media (max-width: 768px) {
-    .trending {
-    text-align: center;
-    justify-content: center;
-     align-items: center;
-     padding-right: 8em;
-     padding-right: 5em;
-    }
-    .list {
-        width: 40%;
-        display: flex;
-    }
-    .wallpaper {
-        height: 70vh;
-    }
-    .form {
-        padding-top: 2em;
-    }
+  .section-title {
+    @apply text-2xl ml-4;
+  }
 }

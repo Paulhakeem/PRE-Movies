@@ -1,56 +1,47 @@
 <script setup>
-import { ref } from 'vue'
-import { RouterLink } from "vue-router"
+import { ref } from "vue";
+import { RouterLink, useRoute } from "vue-router";
 
-const isActive = ref(false)
-const isActiveTwo = ref(false)
-const isActiveThree = ref(false)
-
-const active = () => {
-  isActive.value = !isActive.value
-}
-const activeTwo = () => {
-  isActiveTwo.value = !isActiveTwo.value
-}
-const activeThree = () => {
-  isActiveThree.value = !isActiveThree.value
-}
+const route = useRoute();
 </script>
 <template>
-     <div class="trending flex gap-6 pl-20 pt-10">
-      <h1
-        class="text-left text-xl font-semibold text-[#032541] first-letter:uppercase"
-      >
-        trending
-      </h1>
+  <div class="px-6 py-8">
+    <div class="flex items-center gap-4 mb-8">
+      <h2 class="section-title">Trending</h2>
+    </div>
+    <div class="trending px-6 mb-6">
       <RouterLink to="/">
         <button
-        @click="active"
-        :class="isActive ? 'bg-[#032541] text-[#88cca5]' : 'bg-white text-[#032541]'"
-        class="border border-1 border-[#032541] p-1 w-20 rounded-full first-letter:uppercase"
-      >
-        all
-      </button>
-     </RouterLink>
-     <RouterLink to="/trends">
-        <button 
-        @click="activeTwo"
-        :class="isActiveTwo ? 'bg-[#032541] text-[#88cca5]' : 'bg-white text-[#032541]'"
-        class="border border-1 border-[#032541] p-1 w-20 rounded-full first-letter:uppercase"
-      >
-        today
-      </button>
-     </RouterLink>
-
+          :class="[
+            route.path === '/' ? 'gradient-btn text-white' : 'btn-outline',
+            'px-6 py-2 rounded-full font-semibold transition-all duration-300 whitespace-nowrap hover:scale-105',
+          ]"
+        >
+          All Time
+        </button>
+      </RouterLink>
+      <RouterLink to="/trends">
+        <button
+          :class="[
+            route.path === '/trends'
+              ? 'gradient-btn text-white'
+              : 'btn-outline',
+            'px-6 py-2 rounded-full font-semibold transition-all duration-300 whitespace-nowrap hover:scale-105',
+          ]"
+        >
+          Today
+        </button>
+      </RouterLink>
       <RouterLink to="/week">
         <button
-        @click="activeThree"
-        :class="isActiveThree ? 'bg-[#032541] text-[#88cca5]' : 'bg-white text-[#032541]'"
-        class="border border-1 border-[#032541] p-1 w-20 rounded-full text-[#88cca5] first-letter:uppercase"
-      >
-        week
-      </button>
+          :class="[
+            route.path === '/week' ? 'gradient-btn text-white' : 'btn-outline',
+            'px-6 py-2 rounded-full font-semibold transition-all duration-300 whitespace-nowrap hover:scale-105',
+          ]"
+        >
+          This Week
+        </button>
       </RouterLink>
-      
     </div>
+  </div>
 </template>
